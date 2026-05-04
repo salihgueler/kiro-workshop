@@ -225,4 +225,4 @@ The configuration is a single JSON file. The payoff is being able to say "test m
 
 ## What's Next
 
-We've been working inside the IDE this whole time. In the next step, we'll take Kiro to the terminal with the **Kiro CLI** — and show how headless mode lets you run Kiro in CI/CD pipelines without any UI at all.
+We've been working inside the IDE this whole time. In the next step, we'll take Kiro to the terminal with the **Kiro CLI** — a full agent experience for developers who prefer the command line.
