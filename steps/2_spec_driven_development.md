@@ -160,6 +160,18 @@ This gives you fine-grained control. Accept the API route definition but reject 
 - If a task fails or produces something unexpected, just tell Kiro in chat and it adjusts
 - The tasks reference the design doc — Kiro is following the plan, not improvising
 
+### Checkpoints: Your Safety Net
+
+As Kiro executes tasks, it creates **checkpoints** — snapshots of your project state that you can revert to at any time. If a task produces bad output or breaks something:
+
+1. Click **Revert** to go back to the checkpoint before that task
+2. This undoes both the file changes _and_ the context additions from that task
+3. Re-run the task, or give Kiro different instructions and try again
+
+This is different from just undoing file changes — checkpoints restore the full conversation state too. Think of it as a save point in a game. If the boss fight goes badly, reload and try a different strategy.
+
+**Demo moment:** After a task completes, intentionally ask Kiro to make a bad change ("rewrite the API to use XML instead of JSON"). Then revert to the checkpoint and show the project snapping back to its previous state. The audience will appreciate having a safety net.
+
 ---
 
 ## 2.7 — The Three Files
@@ -207,6 +219,7 @@ If something's not working, use `#terminal` in chat to share the error output wi
 | **Supervised mode**      | Reviewed code changes hunk-by-hunk during task execution          |
 | **`#spec` context**      | Referenced spec artifacts in chat                                 |
 | **Iterative refinement** | Edited requirements and design through conversation before coding |
+| **Checkpoints**          | Reverted to a previous state when a task produced bad output      |
 
 ---
 

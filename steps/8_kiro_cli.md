@@ -160,6 +160,10 @@ Inside a session, you can also:
 
 Sessions are stored per directory, so each project has its own history.
 
+### Exporting conversations (IDE comparison)
+
+In the IDE, you can export a conversation by right-clicking the chat tab and selecting **Export Conversation** — it saves as a markdown file. The CLI equivalent is `/chat save`, which exports to JSON. Both are useful for sharing sessions with teammates or keeping a record of how a feature was built.
+
 ---
 
 ## 8.8 — Custom Agents
@@ -237,19 +241,20 @@ After this:
 
 ## 8.12 — What We Just Demonstrated
 
-| Kiro Feature           | How we used it                                            |
-| ---------------------- | --------------------------------------------------------- |
-| **Kiro CLI**           | Full interactive chat in the terminal                     |
-| **CLI installation**   | One-line install on macOS/Linux/Windows                   |
-| **Interactive chat**   | Asked questions and made changes to the game              |
-| **Shell translation**  | Translated natural language to shell commands             |
-| **Inline commands**    | Ran shell commands with `!` without leaving chat          |
-| **Context management** | Controlled file context with `/context` and glob patterns |
-| **Session management** | Resumed, listed, saved, and loaded sessions               |
-| **Custom agents**      | Created specialized agent configurations                  |
-| **MCP from CLI**       | Managed MCP servers via command line                      |
-| **Inline suggestions** | Ghost-text completions in the shell                       |
-| **Command router**     | Configured `kiro` to launch CLI or IDE                    |
+| Kiro Feature           | How we used it                                                        |
+| ---------------------- | --------------------------------------------------------------------- |
+| **Kiro CLI**           | Full interactive chat in the terminal                                 |
+| **CLI installation**   | One-line install on macOS/Linux/Windows                               |
+| **Interactive chat**   | Asked questions and made changes to the game                          |
+| **Shell translation**  | Translated natural language to shell commands                         |
+| **Inline commands**    | Ran shell commands with `!` without leaving chat                      |
+| **Context management** | Controlled file context with `/context` and glob patterns             |
+| **Session management** | Resumed, listed, saved, and loaded sessions                           |
+| **Session export**     | Exported conversations (CLI: `/chat save`, IDE: right-click → Export) |
+| **Custom agents**      | Created specialized agent configurations                              |
+| **MCP from CLI**       | Managed MCP servers via command line                                  |
+| **Inline suggestions** | Ghost-text completions in the shell                                   |
+| **Command router**     | Configured `kiro` to launch CLI or IDE                                |
 
 ---
 

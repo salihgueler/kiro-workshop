@@ -143,7 +143,41 @@ The `browser_snapshot` tool captures an accessibility tree, not just a visual sc
 
 ---
 
-## 7.5 — MCP Configuration Deep Dive
+## 7.5 — Bugfix Specs: When Testing Finds a Bug
+
+If one of the Playwright tests reveals a bug — say the leaderboard shows the wrong win count, or diagonal wins aren't detected — this is the perfect moment to show **Bugfix Specs**.
+
+In Step 2 we used Feature Specs. Bugfix Specs are the other type, designed for systematically diagnosing and fixing bugs.
+
+### How to create a Bugfix Spec
+
+1. Open a **Spec** session (switch from Vibe in the session picker)
+2. Choose **Bug** instead of Feature
+3. Describe the bug:
+
+```
+The leaderboard shows incorrect win counts. When X wins a game,
+the leaderboard sometimes credits the win to O instead.
+I found this by playing the game with Playwright and checking the leaderboard.
+```
+
+### What Kiro generates
+
+Instead of `requirements.md`, you get `bugfix.md` with:
+
+- **Current behavior** — What's happening now (wrong player credited)
+- **Expected behavior** — What should happen (correct player gets the win)
+- **Unchanged behavior** — What should NOT change (draw detection, game history, reset)
+
+Then the same `design.md` → `tasks.md` flow as Feature Specs, but focused on the fix.
+
+### Why this matters
+
+Bugfix Specs prevent the classic "fix one thing, break another" problem. By explicitly defining what should _not_ change, Kiro is less likely to introduce regressions. The testing → bug discovery → bugfix spec → fix → re-test cycle is a complete quality loop.
+
+---
+
+## 7.6 — MCP Configuration Deep Dive
 
 ### The mcp.json structure
 
@@ -185,7 +219,7 @@ You can reference MCP tools, prompts, and resources in chat using the `#mcp` con
 
 ---
 
-## 7.6 — MCP vs Powers
+## 7.7 — MCP vs Powers
 
 Now that we've configured a raw MCP server, the difference with Powers is clear:
 
@@ -201,7 +235,7 @@ Use raw MCP when you need a specific tool (like Playwright) that doesn't have a 
 
 ---
 
-## 7.7 — What We Just Demonstrated
+## 7.8 — What We Just Demonstrated
 
 | Kiro Feature               | How we used it                                           |
 | -------------------------- | -------------------------------------------------------- |
@@ -211,6 +245,7 @@ Use raw MCP when you need a specific tool (like Playwright) that doesn't have a 
 | **Accessibility snapshot** | Used `browser_snapshot` to check a11y                    |
 | **Screenshots**            | Captured visual evidence of test results                 |
 | **`#mcp` context**         | Referenced MCP tools in chat                             |
+| **Bugfix Specs**           | Created a bugfix spec when testing revealed a bug        |
 | **MCP vs Powers**          | Clarified when to use each approach                      |
 
 ---

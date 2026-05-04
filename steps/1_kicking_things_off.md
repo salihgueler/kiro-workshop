@@ -29,6 +29,12 @@ At the top of the chat, you'll see two things:
 1. **Session type picker** — Choose between **Vibe** and **Spec** sessions.
 2. **Model picker** — Choose which AI model to use (Auto is the default and recommended).
 
+### Model Switching
+
+Click the model picker to see what's available. Kiro gives you access to a range of models — from heavy hitters like Claude Opus (2.2x credit cost) to budget-friendly options like Qwen3 Coder Next (0.05x). Each model has a credit multiplier that affects how fast you burn through your monthly credits.
+
+For this workshop, **Auto** is the best default — it routes to the optimal model per task. But try switching to a cheaper model (like Haiku or Qwen3) for a simple question, then switch to Sonnet or Opus for the scaffold. Watch how the credit consumption changes in your usage dashboard. The takeaway: you control the cost/quality tradeoff per interaction.
+
 ---
 
 ## 1.2 — Vibe Mode: Just Talk and Build
@@ -111,6 +117,8 @@ Once Kiro finishes, run the dev server:
 npm run dev
 ```
 
+Kiro can also run **dev servers in the background** without blocking the chat. If Kiro started the dev server for you during the build, you'll see it running in the background — you can keep chatting while it serves the app. This is the **Dev Servers** feature: long-running processes that don't lock up your conversation.
+
 Open the URL in your browser (usually `http://localhost:5173`) and play a game. Click cells, watch turns alternate, see the win/draw detection work, and hit reset.
 
 ### If something's off
@@ -140,7 +148,8 @@ Kiro will read the existing code, understand the issue, and fix it. This is the 
 | **Image input**          | Dragged a picture into chat as the "spec"                             |
 | **Autopilot**            | Let Kiro work autonomously to create the entire project               |
 | **Terminal integration** | Kiro ran npm commands to scaffold, install, and build                 |
-| **Model selection**      | Used Auto (or showed the model picker)                                |
+| **Model switching**      | Showed the model picker and credit multiplier tradeoffs               |
+| **Dev servers**          | Ran the dev server in the background without blocking chat            |
 
 ---
 

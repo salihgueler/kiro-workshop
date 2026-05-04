@@ -144,6 +144,18 @@ With the **react-best-practices** skill active, Kiro will:
 
 If you saved a screenshot of the game before installing skills, show it side-by-side with the redesigned version. The contrast should be dramatic — from "tutorial project" to "something you'd actually want to play."
 
+### Web Tools in Action
+
+During the redesign, Kiro might need to look things up — a Google Font that matches the aesthetic, a CSS animation technique, or a color palette tool. Kiro has built-in **web tools** that let it search the internet and fetch content from URLs in real time.
+
+Try asking:
+
+```
+Find a distinctive Google Font pairing that fits a retro-futuristic aesthetic for our game.
+```
+
+Kiro will search the web, find font options, and apply them. This is useful anytime Kiro needs current information — library docs, API references, design inspiration — that goes beyond its training data.
+
 ---
 
 ## 3.5 — Invoking Skills Explicitly
@@ -184,6 +196,7 @@ This is a good moment to clarify the three ways to give Kiro extra knowledge:
 | **Progressive disclosure**       | Skills loaded automatically when our request matched their descriptions |
 | **Slash commands**               | Showed how to invoke skills explicitly with `/`                         |
 | **Vibe mode**                    | Used conversational chat to redesign the game with skills active        |
+| **Web tools**                    | Kiro searched the web for fonts, colors, or techniques during redesign  |
 | **Skills vs Steering vs Powers** | Clarified the three knowledge systems                                   |
 
 ---

@@ -197,7 +197,26 @@ After each spec task completes, run the build to verify nothing is broken.
 
 ---
 
-## 5.7 — Managing Hooks
+## 5.7 — Review What Changed: `#git diff`
+
+We've been creating hooks and making changes. Let's pause and review everything that's changed using the `#git diff` context provider.
+
+In the chat, type:
+
+```
+#git diff What have we changed in this step? Summarize the hooks we added and any code modifications.
+```
+
+Kiro reads the current git diff and gives you a summary. This is a natural "pause and review" moment — useful anytime you want to see the big picture before committing.
+
+Other context providers worth trying here:
+
+- `#codebase` — "How is our hook system set up?" (Kiro finds the relevant files automatically)
+- `#file .kiro/hooks/build-on-save.json` — Reference a specific hook file in your question
+
+---
+
+## 5.8 — Managing Hooks
 
 ### Viewing hooks
 
@@ -226,7 +245,7 @@ They're version-controllable — commit them to your repo and the whole team get
 
 ---
 
-## 5.8 — Hook Patterns Worth Knowing
+## 5.9 — Hook Patterns Worth Knowing
 
 Beyond what we built, here are patterns the audience might want to try:
 
@@ -240,7 +259,7 @@ Beyond what we built, here are patterns the audience might want to try:
 
 ---
 
-## 5.9 — What We Just Demonstrated
+## 5.10 — What We Just Demonstrated
 
 | Kiro Feature                  | How we used it                                              |
 | ----------------------------- | ----------------------------------------------------------- |
@@ -252,6 +271,8 @@ Beyond what we built, here are patterns the audience might want to try:
 | **askAgent action**           | Had Kiro review its own work before writing                 |
 | **Natural language creation** | Described hooks in plain English, Kiro generated the config |
 | **Hook management**           | Showed enable/disable and file structure                    |
+| **`#git diff` context**       | Reviewed all changes made during the step                   |
+| **Context providers**         | Used `#codebase` and `#file` to reference project files     |
 
 ---
 
