@@ -115,7 +115,40 @@ This means you never have to leave the chat session to run a quick command.
 
 ---
 
-## 8.6 — Context Management
+## 8.6 — Multi-Line Input and the Editor
+
+For longer prompts, you have several options:
+
+- **Shift+Enter** — Insert a newline (works in iTerm2, Ghostty, Kitty, Warp, Zed)
+- **Ctrl+J** — Insert a newline (works in all terminals including tmux)
+- **Alt+Enter** — Insert a newline (works in Terminal.app and Ghostty)
+- **`/editor`** — Opens your default editor (vi by default) for composing longer prompts
+
+The `/editor` command is great when you want to write a detailed multi-paragraph prompt without fighting the terminal input.
+
+---
+
+## 8.7 — Slash Commands in Chat
+
+Inside a chat session, type `/` to see available slash commands:
+
+| Command    | What it does                                       |
+| ---------- | -------------------------------------------------- |
+| `/model`   | Switch the AI model mid-conversation               |
+| `/tools`   | View and search available tools                    |
+| `/agent`   | Switch to a different custom agent                 |
+| `/compact` | Compact the conversation to free up context        |
+| `/context` | Manage file context                                |
+| `/chat`    | Session management (new, resume, save, load)       |
+| `/editor`  | Open editor for multi-line input                   |
+| `/reply`   | Open editor with the last assistant message quoted |
+| `/help`    | Show all available commands                        |
+
+These mirror many of the IDE's features — model switching, tool discovery, and context management — all from the keyboard.
+
+---
+
+## 8.8 — Context Management
 
 Control what files Kiro sees in the current session:
 
@@ -130,7 +163,7 @@ This is the CLI equivalent of the `#file` and `#folder` context providers in the
 
 ---
 
-## 8.7 — Session Management
+## 8.9 — Session Management
 
 The CLI saves every conversation automatically. You can resume, list, and manage sessions:
 
@@ -166,7 +199,7 @@ In the IDE, you can export a conversation by right-clicking the chat tab and sel
 
 ---
 
-## 8.8 — Custom Agents
+## 8.10 — Custom Agents
 
 Create specialized agent configurations for different workflows:
 
@@ -187,7 +220,7 @@ Custom agents let you define different system prompts, tool permissions, and beh
 
 ---
 
-## 8.9 — MCP from the Terminal
+## 8.11 — MCP from the Terminal
 
 Manage MCP servers without touching JSON files:
 
@@ -205,7 +238,7 @@ This is useful when you're setting up a project on a new machine or configuring 
 
 ---
 
-## 8.10 — Inline Suggestions
+## 8.12 — Inline Suggestions
 
 The CLI can provide ghost-text suggestions as you type commands in your shell:
 
@@ -217,7 +250,7 @@ kiro-cli inline status     # Check current status
 
 ---
 
-## 8.11 — Kiro Command Router
+## 8.13 — Kiro Command Router
 
 If you use both the IDE and CLI, the command router lets you control what `kiro` does:
 
@@ -239,7 +272,79 @@ After this:
 
 ---
 
-## 8.12 — What We Just Demonstrated
+## 8.14 — Housekeeping Commands
+
+A few more commands that round out the CLI experience:
+
+### Update
+
+```bash
+kiro-cli update                  # Update to the latest version
+kiro-cli update --non-interactive  # Update without confirmation (for scripts)
+```
+
+### Theme
+
+```bash
+kiro-cli theme --list    # See available themes
+kiro-cli theme dark      # Set dark theme
+kiro-cli theme light     # Set light theme
+kiro-cli theme system    # Follow system preference
+```
+
+### Settings
+
+```bash
+kiro-cli settings list           # View current settings
+kiro-cli settings list --all     # View all available settings with descriptions
+kiro-cli settings open           # Open settings file in your editor
+kiro-cli settings telemetry.enabled false  # Set a specific setting
+```
+
+### Diagnostics
+
+```bash
+kiro-cli doctor        # Quick check for common issues
+kiro-cli diagnostic    # Full system report (OS, version, environment, config)
+```
+
+### Report issues
+
+```bash
+kiro-cli issue "Autocomplete not working in zsh"  # Create a GitHub issue
+```
+
+---
+
+## 8.15 — Everything from the IDE Works Here Too
+
+One thing to emphasize: the CLI isn't a separate product. It shares:
+
+- **Steering files** — Same `.kiro/steering/` files apply
+- **Hooks** — Same `.kiro/hooks/` automation fires
+- **MCP servers** — Same `.kiro/settings/mcp.json` config
+- **Skills** — Same `.kiro/skills/` packages activate
+- **Powers** — Same installed powers activate by keyword
+- **Models** — Same model selection and credit system
+
+If you set up steering in Step 4 and hooks in Step 5, they work identically in the CLI. No reconfiguration needed.
+
+---
+
+## 8.16 — Autocomplete
+
+The CLI integrates with your shell for intelligent command completion:
+
+```bash
+kiro-cli integrations install    # Set up shell autocomplete
+kiro-cli integrations status     # Check if it's active
+```
+
+Once installed, tab-completion works for `kiro-cli` commands, subcommands, and flags.
+
+---
+
+## 8.17 — What We Just Demonstrated
 
 | Kiro Feature           | How we used it                                                        |
 | ---------------------- | --------------------------------------------------------------------- |
@@ -248,6 +353,8 @@ After this:
 | **Interactive chat**   | Asked questions and made changes to the game                          |
 | **Shell translation**  | Translated natural language to shell commands                         |
 | **Inline commands**    | Ran shell commands with `!` without leaving chat                      |
+| **Multi-line input**   | Shift+Enter, Ctrl+J, `/editor` for longer prompts                     |
+| **Slash commands**     | `/model`, `/tools`, `/compact`, `/context`, `/chat`                   |
 | **Context management** | Controlled file context with `/context` and glob patterns             |
 | **Session management** | Resumed, listed, saved, and loaded sessions                           |
 | **Session export**     | Exported conversations (CLI: `/chat save`, IDE: right-click → Export) |
@@ -255,6 +362,11 @@ After this:
 | **MCP from CLI**       | Managed MCP servers via command line                                  |
 | **Inline suggestions** | Ghost-text completions in the shell                                   |
 | **Command router**     | Configured `kiro` to launch CLI or IDE                                |
+| **Themes**             | Switched terminal UI between dark/light/system                        |
+| **Settings**           | Viewed and configured CLI settings                                    |
+| **Update**             | Self-updated to the latest version                                    |
+| **Autocomplete**       | Shell tab-completion for commands                                     |
+| **Shared config**      | Steering, hooks, MCP, skills, powers all work identically             |
 
 ---
 
