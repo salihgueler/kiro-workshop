@@ -1,12 +1,12 @@
 # Step 8 — Kiro CLI
 
-> **Goal:** Take Kiro out of the IDE and into the terminal. Show the Kiro CLI as a full development experience — interactive chat, custom agents, shell translation, session management, and MCP from the command line.
+> **Goal:** Take Kiro out of the IDE and into the terminal. Explore the Kiro CLI as a full development experience — interactive chat, custom agents, shell translation, session management, and MCP from the command line.
 
 ---
 
 ## 8.1 — Kiro Beyond the IDE
 
-Everything we've done so far has been inside the Kiro IDE. But not every developer lives in an IDE. Some prefer the terminal. Some work over SSH. Some want Kiro alongside their existing tmux/vim/emacs workflow.
+Everything you've done so far has been inside the Kiro IDE. But not every developer lives in an IDE. Some prefer the terminal. Some work over SSH. Some want Kiro alongside their existing tmux/vim/emacs workflow.
 
 The **Kiro CLI** is a full-featured agent experience for the terminal. It's not a stripped-down version — it has the same agent, same models, same steering, hooks, MCP, and skills as the IDE. Just a different interface.
 
@@ -49,7 +49,7 @@ kiro-cli doctor    # Diagnose common issues
 The simplest way to start:
 
 ```bash
-cd my-tic-tac-toe-project
+cd tic-tac-toe
 kiro-cli
 ```
 
@@ -63,12 +63,12 @@ You can also pass a question as an argument to skip the interactive startup:
 kiro-cli chat "Explain the game logic in Board.tsx"
 ```
 
-### What to demo
+### Try it out
 
 Open a terminal, `cd` into the tic-tac-toe project, and run `kiro-cli`. Ask it to do something with the game:
 
 ```
-Explain how the win detection works in our tic-tac-toe game
+Explain how the win detection works in the tic-tac-toe game
 ```
 
 Then ask it to make a change:
@@ -77,7 +77,7 @@ Then ask it to make a change:
 Add a move counter that shows how many moves have been played in the current game
 ```
 
-Show that it reads files, writes code, runs commands, and follows the steering files we set up in Step 4 — all from the terminal.
+Notice that it reads files, writes code, runs commands, and follows the steering files you set up in Step 4 — all from the terminal.
 
 ---
 
@@ -320,12 +320,12 @@ kiro-cli issue "Autocomplete not working in zsh"  # Create a GitHub issue
 
 One thing to emphasize: the CLI isn't a separate product. It shares:
 
-- **Steering files** — Same `.kiro/steering/` files apply
-- **Hooks** — Same `.kiro/hooks/` automation fires
-- **MCP servers** — Same `.kiro/settings/mcp.json` config
-- **Skills** — Same `.kiro/skills/` packages activate
-- **Powers** — Same installed powers activate by keyword
-- **Models** — Same model selection and credit system
+- **Steering files**: Same `.kiro/steering/` files apply
+- **Hooks**: Same `.kiro/hooks/` automation fires
+- **MCP servers**: Same `.kiro/settings/mcp.json` config
+- **Skills**: Same `.kiro/skills/` packages activate
+- **Powers**: Same installed powers activate by keyword
+- **Models**: Same model selection and credit system
 
 If you set up steering in Step 4 and hooks in Step 5, they work identically in the CLI. No reconfiguration needed.
 
@@ -344,9 +344,9 @@ Once installed, tab-completion works for `kiro-cli` commands, subcommands, and f
 
 ---
 
-## 8.17 — What We Just Demonstrated
+## 8.17 — Recap
 
-| Kiro Feature           | How we used it                                                        |
+| Kiro Feature           | How you used it                                                       |
 | ---------------------- | --------------------------------------------------------------------- |
 | **Kiro CLI**           | Full interactive chat in the terminal                                 |
 | **CLI installation**   | One-line install on macOS/Linux/Windows                               |
@@ -378,17 +378,19 @@ The Kiro CLI isn't a secondary tool — it's a first-class development experienc
 
 ## What's Next
 
-That's a wrap. We've covered the full Kiro platform — from scaffolding a game with a picture, to structured specs, skills, steering, hooks, powers, MCP testing, and now the CLI. All on the free tier.
+That's a wrap. You've covered the full Kiro platform — from scaffolding a game with a picture, to structured specs, skills, steering, hooks, powers, MCP testing, and now the CLI. All on the free tier.
 
-| Step | Feature              | What we did                                                           |
+| Step | Feature              | What you did                                                          |
 | ---- | -------------------- | --------------------------------------------------------------------- |
 | 1    | **IDE + Vibe mode**  | Toured Kiro, scaffolded the game from a picture                       |
 | 2    | **Specs**            | Added a backend with structured requirements → design → tasks         |
 | 3    | **Skills**           | Installed frontend-design and React best practices skills             |
-| 4    | **Steering**         | Taught Kiro our project conventions                                   |
+| 4    | **Steering**         | Taught Kiro your project conventions                                  |
 | 5    | **Hooks**            | Automated build checks, accessibility reviews, post-task verification |
 | 6    | **Powers**           | Extended Kiro with external service integrations                      |
 | 7    | **MCP + Playwright** | Configured raw MCP, tested the game in a real browser                 |
 | 8    | **Kiro CLI**         | Full agent experience in the terminal                                 |
 
-From a picture of a tic-tac-toe board to a full-stack, tested, deployable application — built with an audience driving the decisions. That's Kiro. 🎮
+From a picture of a tic-tac-toe board to a full-stack, tested, deployable application — built with you driving the decisions. That's Kiro.  
+
+If you have more time, keep on exploring and see what else you can build!

@@ -1,12 +1,12 @@
 # Step 7 — MCP and Testing with Playwright
 
-> **Goal:** Configure a raw MCP server manually, install the Playwright MCP, and use it to test our tic-tac-toe game by having Kiro play it in a real browser.
+> **Goal:** Configure a raw MCP server manually, install the Playwright MCP, and use it to test your tic-tac-toe game by having Kiro play it in a real browser.
 
 ---
 
 ## 7.1 — What Is MCP?
 
-We've already used MCP indirectly — Powers bundle MCP servers behind the scenes. But you can also configure MCP servers directly for tools that don't have a Power yet, or when you want full control.
+You've already used MCP indirectly — Powers bundle MCP servers behind the scenes. But you can also configure MCP servers directly for tools that don't have a Power yet, or when you want full control.
 
 **Model Context Protocol (MCP)** is an open protocol that lets Kiro communicate with external servers to access specialized tools, prompts, and resources. Think of it as a plugin system: each MCP server provides a set of tools that Kiro can call during a conversation.
 
@@ -22,11 +22,11 @@ With MCP, Kiro can:
 
 ## 7.2 — Why Playwright MCP?
 
-We've built a tic-tac-toe game. We've added a backend, redesigned the UI, set up conventions, and automated our workflow. But we haven't actually _tested_ it properly.
+You've built a tic-tac-toe game. You've added a backend, redesigned the UI, set up conventions, and automated your workflow. But you haven't actually _tested_ it properly.
 
-The **Playwright MCP server** gives Kiro the ability to control a real browser — navigate to pages, click elements, fill forms, take screenshots, and inspect the DOM. That means we can ask Kiro to:
+The **Playwright MCP server** gives Kiro the ability to control a real browser — navigate to pages, click elements, fill forms, take screenshots, and inspect the DOM. That means you can ask Kiro to:
 
-- Open our game in a browser
+- Open your game in a browser
 - Play a full game by clicking cells
 - Verify the win/draw detection works
 - Check the leaderboard shows correct stats
@@ -98,7 +98,7 @@ Make sure your dev server is running (`npm run dev`), then open a Vibe chat and 
 ### Test 1: Play a full game
 
 ```
-Open our tic-tac-toe game at http://localhost:5173 in the browser.
+Open the tic-tac-toe game at http://localhost:5173 in the browser.
 Play a full game — make moves for both X and O.
 Try to get X to win with a diagonal.
 Take a screenshot of the winning state.
@@ -114,7 +114,7 @@ Kiro will:
 4. Watch for the win message to appear
 5. Take a screenshot showing the final board state
 
-This is a great visual moment for the audience — they can see Kiro literally playing the game in a real browser.
+This is a great visual moment — you can see Kiro literally playing the game in a real browser.
 
 ### Test 2: Verify the leaderboard
 
@@ -145,9 +145,9 @@ The `browser_snapshot` tool captures an accessibility tree, not just a visual sc
 
 ## 7.5 — Bugfix Specs: When Testing Finds a Bug
 
-If one of the Playwright tests reveals a bug — say the leaderboard shows the wrong win count, or diagonal wins aren't detected — this is the perfect moment to show **Bugfix Specs**.
+If one of the Playwright tests reveals a bug , say the leaderboard shows the wrong win count, or diagonal wins aren't detected. This is the perfect moment to try **Bugfix Specs**.
 
-In Step 2 we used Feature Specs. Bugfix Specs are the other type, designed for systematically diagnosing and fixing bugs.
+In Step 2 you used Feature Specs. Bugfix Specs are the other type, designed for systematically diagnosing and fixing bugs.
 
 ### How to create a Bugfix Spec
 
@@ -165,9 +165,9 @@ I found this by playing the game with Playwright and checking the leaderboard.
 
 Instead of `requirements.md`, you get `bugfix.md` with:
 
-- **Current behavior** — What's happening now (wrong player credited)
-- **Expected behavior** — What should happen (correct player gets the win)
-- **Unchanged behavior** — What should NOT change (draw detection, game history, reset)
+- **Current behavior**: What's happening now (wrong player credited)
+- **Expected behavior**: What should happen (correct player gets the win)
+- **Unchanged behavior**: What should NOT change (draw detection, game history, reset)
 
 Then the same `design.md` → `tasks.md` flow as Feature Specs, but focused on the fix.
 
@@ -221,7 +221,7 @@ You can reference MCP tools, prompts, and resources in chat using the `#mcp` con
 
 ## 7.7 — MCP vs Powers
 
-Now that we've configured a raw MCP server, the difference with Powers is clear:
+Now that you've configured a raw MCP server, the difference with Powers is clear:
 
 |                    | Raw MCP                             | Powers                                     |
 | ------------------ | ----------------------------------- | ------------------------------------------ |
@@ -235,9 +235,9 @@ Use raw MCP when you need a specific tool (like Playwright) that doesn't have a 
 
 ---
 
-## 7.8 — What We Just Demonstrated
+## 7.8 — Recap
 
-| Kiro Feature               | How we used it                                           |
+| Kiro Feature               | How you used it                                          |
 | -------------------------- | -------------------------------------------------------- |
 | **MCP configuration**      | Manually configured Playwright MCP in `mcp.json`         |
 | **MCP tools**              | Used browser automation tools to test the game           |
@@ -260,4 +260,4 @@ The configuration is a single JSON file. The payoff is being able to say "test m
 
 ## What's Next
 
-We've been working inside the IDE this whole time. In the next step, we'll take Kiro to the terminal with the **Kiro CLI** — a full agent experience for developers who prefer the command line.
+You've been working inside the IDE this whole time. In the next step, you'll take Kiro to the terminal with the **Kiro CLI** — a full agent experience for developers who prefer the command line.
