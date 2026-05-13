@@ -6,7 +6,7 @@ This repository contains the workshop guides. The tic-tac-toe app itself is buil
 
 ## Prerequisites
 
-- [Kiro](https://kiro.dev) installed (IDE, or the CLI for Step 8)
+- [Kiro](https://kiro.dev/download?trk=7fcac8e0-008e-4fe0-8e3d-f72d7381e919&sc_channel=el/) installed (IDE, or the CLI for Step 8)
 - Node.js and npm (for the Vite + React + TypeScript scaffold and the Express backend)
 - A Kiro account signed in (Google, GitHub, Builder ID, or IAM Identity Center)
 - A whiteboard (physical or digital) to sketch out the expected features of the tic-tac-toe game before Step 1. Jot down the board, the X and O markers, turn indicator, win/draw detection, and a reset button. Snap a photo of it, that picture becomes your starting spec in Step 1.
