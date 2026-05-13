@@ -1,17 +1,17 @@
 # Step 2 — Spec-Driven Development
 
-> **Goal:** Introduce Specs as Kiro's structured approach to building features. Create a spec for adding a backend to our tic-tac-toe game, walk through the three-phase workflow, and execute the tasks.
+> **Goal:** Introduce Specs as Kiro's structured approach to building features. Create a spec for adding a backend to the tic-tac-toe game, walk through the three-phase workflow, and execute the tasks.
 
 ---
 
 ## 2.1 — Why Specs?
 
-In Step 1 we vibed. We threw a picture at Kiro and said "build this" — and it worked great for scaffolding. But what happens when the feature gets more complex?
+In Step 1 you vibed. You threw a picture at Kiro and said "build this" — and it worked great for scaffolding. But what happens when the feature gets more complex?
 
 - What exactly are the requirements?
 - How should the backend API look?
 - What about error handling, edge cases, data models?
-- How do we track progress across multiple tasks?
+- How do you track progress across multiple tasks?
 
 This is where **Spec-driven development** comes in. Instead of jumping straight into code, Kiro helps you think through the feature first — then builds it systematically.
 
@@ -28,15 +28,15 @@ Think of it this way: **Vibe is a whiteboard sketch. Spec is the blueprint.**
 
 ---
 
-## 2.2 — What We're Building
+## 2.2 — What You're Building
 
-Our tic-tac-toe game works, but it's purely client-side. Let's add a backend so we can:
+Your tic-tac-toe game works, but it's purely client-side. Let's add a backend so you can:
 
-- **Save game results** — Track who won, who lost, and draws
-- **Leaderboard API** — Serve win/loss stats
-- **Game history** — Store and retrieve past games
+- **Save game results**: Track who won, who lost, and draws
+- **Leaderboard API**: Serve win/loss stats
+- **Game history**: Store and retrieve past games
 
-This is a perfect candidate for a Spec because it touches multiple layers (API design, data model, frontend integration) and has clear requirements we can define upfront.
+This is a perfect candidate for a Spec because it touches multiple layers (API design, data model, frontend integration) and has clear requirements you can define upfront.
 
 ---
 
@@ -47,12 +47,13 @@ This is a perfect candidate for a Spec because it touches multiple layers (API d
 There are two ways to create a Spec:
 
 1. **From the Kiro panel** — Click the `+` button under the **Specs** section in the sidebar
-2. **From chat** — Switch the session picker from **Vibe** to **Spec**
+2. **From chat** — Open a new session and instead of **Vibe**, select **Spec**
 
-Either way, Kiro will ask you two things:
+Either way, Kiro will ask you three things:
 
-1. **Feature or Bug?** — Choose **Feature** (we're building something new)
-2. **Describe your feature** — This is your prompt
+1. **Describe what you want to do** — This is your prompt
+2. **Feature or Bug?** — Choose **Feature**, you're building something new
+3. **Requirements** or **Technical Design** — Choose **Requirements**, you want to gather requirements first
 
 ### The prompt
 
@@ -68,7 +69,7 @@ I want a Node.js/Express API that:
 The React frontend should display the leaderboard and game history.
 ```
 
-Press Enter and watch what happens.
+Enter the prompt and press enter. Tell Kiro it's a **Feature** and you want to work on **Requirements**. Then watch what happens.
 
 ---
 
@@ -84,7 +85,7 @@ This file contains **user stories** with **acceptance criteria** written in a st
 
 Each user story has specific acceptance criteria — testable conditions that define "done."
 
-### What to point out
+### What to notice
 
 - Kiro didn't just echo your prompt back. It **expanded** your idea into structured requirements with edge cases you might not have thought of.
 - The format follows the EARS (Easy Approach to Requirements Syntax) standard.
@@ -100,7 +101,7 @@ Add a requirement for resetting the leaderboard.
 Also, the game history should include the full board state for each move, not just the final result.
 ```
 
-Kiro updates the requirements file. When you're satisfied, move to the next phase.
+Kiro updates the requirements file. When you're satisfied, move to the next phase in the `requirements.md` file and choose **Continue** and **Generate Design**.
 
 ---
 
@@ -110,19 +111,21 @@ Kiro generates `design.md` — the technical architecture for implementing the r
 
 This typically includes:
 
-- **System architecture** — How the frontend and backend communicate
-- **API design** — Endpoints, request/response shapes, status codes
-- **Data model** — What the game result and leaderboard objects look like
-- **Sequence diagrams** — Flow of a game being saved, leaderboard being fetched
-- **Error handling** — What happens when things go wrong
-- **Testing strategy** — What to test and how
+- **System architecture**: How the frontend and backend communicate
+- **API design**: Endpoints, request/response shapes, status codes
+- **Data model**: What the game result and leaderboard objects look like
+- **Sequence diagrams**: Flow of a game being saved, leaderboard being fetched
+- **Error handling**: What happens when things go wrong
+- **Testing strategy**: What to test and how
 
-### What to point out
+### What to notice
 
-- The design doc references the requirements — there's traceability between what we want and how we'll build it.
+- The design doc references the requirements, there's traceability between what you want and how you'll build it.
 - Sequence diagrams are generated in Mermaid syntax — Kiro renders them visually.
 - The API design gives you concrete endpoint definitions before any code is written.
 - Again, you can **iterate** — "Use a different API structure" or "Add pagination to the history endpoint."
+
+If you have any changes, Kiro updates the design file. When you're satisfied, move to the next phase in the `design.md` file and choose **Continue** and **Generate Tasks**.
 
 ---
 
@@ -132,9 +135,9 @@ Kiro generates `tasks.md` — a list of discrete, executable implementation task
 
 Each task is:
 
-- **Specific** — "Create the Express server with game results POST endpoint"
-- **Ordered** — Dependencies are respected (backend before frontend integration)
-- **Trackable** — Status updates in real-time (not started → in progress → completed)
+- **Specific**: "Create the Express server with game results POST endpoint"
+- **Ordered**: Dependencies are respected (backend before frontend integration)
+- **Trackable**: Status updates in real-time (not started → in progress → completed)
 
 ### Executing tasks
 
@@ -145,7 +148,9 @@ You have two options:
 
 ### Supervised mode for task execution
 
-This is a great moment to **switch to Supervised mode**. Toggle it on, then run a task. Kiro will:
+This is a great moment to **switch to Supervised mode**. Supervised mode is simply **Autopilot toggled off** — look for the Autopilot toggle in the chat input area and turn it off. That's it, you're now in Supervised mode.
+
+With Supervised mode active, run a task. Kiro will:
 
 1. Write the code for that task
 2. Pause and show you the changes as **hunks**
@@ -153,10 +158,10 @@ This is a great moment to **switch to Supervised mode**. Toggle it on, then run 
 
 This gives you fine-grained control. Accept the API route definition but reject the error handling approach? You can do that. Want to discuss a specific line? Click "Chat inline" on that hunk.
 
-### What to point out during execution
+### What to notice during execution
 
 - Watch the task status update in real-time in the Specs panel
-- Show the diff view — Kiro is creating backend files, modifying the frontend, adding API calls
+- Check the diff view — Kiro is creating backend files, modifying the frontend, adding API calls
 - If a task fails or produces something unexpected, just tell Kiro in chat and it adjusts
 - The tasks reference the design doc — Kiro is following the plan, not improvising
 
@@ -164,13 +169,15 @@ This gives you fine-grained control. Accept the API route definition but reject 
 
 As Kiro executes tasks, it creates **checkpoints** — snapshots of your project state that you can revert to at any time. If a task produces bad output or breaks something:
 
-1. Click **Revert** to go back to the checkpoint before that task
+1. Click **Restore** to go back to the checkpoint before that task
 2. This undoes both the file changes _and_ the context additions from that task
 3. Re-run the task, or give Kiro different instructions and try again
 
 This is different from just undoing file changes — checkpoints restore the full conversation state too. Think of it as a save point in a game. If the boss fight goes badly, reload and try a different strategy.
 
-**Demo moment:** After a task completes, intentionally ask Kiro to make a bad change ("rewrite the API to use XML instead of JSON"). Then revert to the checkpoint and show the project snapping back to its previous state. The audience will appreciate having a safety net.
+**Try it out:** After a task completes, intentionally ask Kiro to make a bad change ("rewrite the API to use XML instead of JSON"). Then revert to the checkpoint and watch the project snap back to its previous state. It's a good safety net to have.
+
+You can switch back to **Autopilot** and **Run all Tasks**.
 
 ---
 
@@ -180,8 +187,8 @@ After the spec workflow, you have three artifacts in `.kiro/specs/<spec-name>/`:
 
 ```
 .kiro/specs/tic-tac-toe-backend/
-├── requirements.md    # What we're building (user stories + acceptance criteria)
-├── design.md          # How we're building it (architecture + API + data model)
+├── requirements.md    # What you're building (user stories + acceptance criteria)
+├── design.md          # How you're building it (architecture + API + data model)
 └── tasks.md           # Step-by-step implementation plan (with status tracking)
 ```
 
@@ -207,9 +214,9 @@ If something's not working, use `#terminal` in chat to share the error output wi
 
 ---
 
-## 2.9 — What We Just Demonstrated
+## 2.9 — Recap
 
-| Kiro Feature             | How we used it                                                    |
+| Kiro Feature             | How you used it                                                   |
 | ------------------------ | ----------------------------------------------------------------- |
 | **Spec sessions**        | Created a full feature spec with three phases                     |
 | **Requirements phase**   | Generated user stories with acceptance criteria from a prompt     |
@@ -217,7 +224,7 @@ If something's not working, use `#terminal` in chat to share the error output wi
 | **Tasks phase**          | Discrete, trackable implementation tasks with real-time status    |
 | **Task execution**       | Ran tasks with Autopilot and Supervised modes                     |
 | **Supervised mode**      | Reviewed code changes hunk-by-hunk during task execution          |
-| **`#spec` context**      | Referenced spec artifacts in chat                                 |
+| **`#` context providers**| Used `#terminal` to share errors; `#file`, `#folder`, `#problems` to pull context into chat |
 | **Iterative refinement** | Edited requirements and design through conversation before coding |
 | **Checkpoints**          | Reverted to a previous state when a task produced bad output      |
 
@@ -233,4 +240,4 @@ The best part: you can mix both. Vibe to explore, Spec to build.
 
 ## What's Next
 
-We have a full-stack tic-tac-toe game with a backend. In the next step, we'll look at how to teach Kiro about our project's conventions using **Steering** — so it writes code the way _we_ want it written.
+You have a full-stack tic-tac-toe game with a backend. In the next step, you'll look at how to teach Kiro about your project's conventions using **Skills** — portable instruction packages that shape how Kiro writes code.

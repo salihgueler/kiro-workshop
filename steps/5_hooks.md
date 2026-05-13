@@ -6,7 +6,7 @@
 
 ## 5.1 — Why Hooks?
 
-In Step 4 we taught Kiro our conventions with Steering. But conventions only work if they're enforced. Right now, nothing stops Kiro (or us) from writing code that breaks the rules.
+In Step 4 you taught Kiro your conventions with Steering. But conventions only work if they're enforced. Right now, nothing stops Kiro (or you) from writing code that breaks the rules.
 
 Hooks close that gap. They're automated triggers that fire when something happens in the IDE — a file is saved, a tool is about to run, a spec task finishes. When the trigger fires, Kiro either runs a shell command or sends itself a prompt.
 
@@ -67,13 +67,13 @@ There are three ways to create a hook:
 
 `Cmd+Shift+P` → "Kiro: Open Kiro Hook UI"
 
-For this workshop, we'll use the natural language approach — it's faster and shows off Kiro's ability to generate hook configs from plain English.
+For this workshop, use the natural language approach — it's faster and shows off Kiro's ability to generate hook configs from plain English.
 
 ---
 
 ## 5.4 — Hook 1: Build on Save
 
-Let's start simple. We want to run the TypeScript compiler every time we save a `.ts` or `.tsx` file to catch type errors immediately.
+Let's start simple. You want to run the TypeScript compiler every time you save a `.ts` or `.tsx` file to catch type errors immediately.
 
 ### What to say
 
@@ -101,7 +101,7 @@ Run "npm run build" every time a TypeScript file is saved.
 }
 ```
 
-### What to point out
+### What to notice
 
 - The hook is a simple JSON file stored in `.kiro/hooks/`
 - `fileEdited` + `patterns` means it only fires for TypeScript files, not every save
@@ -114,11 +114,13 @@ Make a small change to a `.ts` file — add a type error on purpose (like assign
 
 Fix the error, save again, and the build passes. Instant feedback loop.
 
+If the hook doesn't run, ask Kiro to help!
+
 ---
 
 ## 5.5 — Hook 2: Accessibility Review on Write
 
-This one's more interesting. We want Kiro to review every file it writes for accessibility issues _before_ the write happens.
+This one's more interesting. You want Kiro to review every file it writes for accessibility issues _before_ the write happens.
 
 ### What to say
 
@@ -146,7 +148,7 @@ If there are problems, fix them before writing.
 }
 ```
 
-### What to point out
+### What to notice
 
 - `preToolUse` fires _before_ Kiro writes — it's a gate, not a post-check
 - `toolTypes: ["write"]` targets only write operations (not reads, shell commands, etc.)
@@ -163,7 +165,7 @@ If you want to make it dramatic, ask Kiro to create a component with a `<div onC
 
 ## 5.6 — Hook 3: Run Build After Spec Tasks
 
-When we're executing spec tasks (from Step 2), we want to make sure each completed task doesn't break the build.
+When you're executing spec tasks (from Step 2), you want to make sure each completed task doesn't break the build.
 
 ### What to say
 
@@ -188,7 +190,7 @@ After each spec task completes, run the build to verify nothing is broken.
 }
 ```
 
-### What to point out
+### What to notice
 
 - `postTaskExecution` ties into the Spec workflow from Step 2
 - Every time a task is marked complete, the build runs automatically
@@ -199,19 +201,19 @@ After each spec task completes, run the build to verify nothing is broken.
 
 ## 5.7 — Review What Changed: `#git diff`
 
-We've been creating hooks and making changes. Let's pause and review everything that's changed using the `#git diff` context provider.
+You've been creating hooks and making changes. Let's pause and review everything that's changed using the `#git diff` context provider.
 
 In the chat, type:
 
 ```
-#git diff What have we changed in this step? Summarize the hooks we added and any code modifications.
+#git diff What have I changed in this step? Summarize the hooks I added and any code modifications.
 ```
 
 Kiro reads the current git diff and gives you a summary. This is a natural "pause and review" moment — useful anytime you want to see the big picture before committing.
 
 Other context providers worth trying here:
 
-- `#codebase` — "How is our hook system set up?" (Kiro finds the relevant files automatically)
+- `#codebase` — "How is the hook system set up?" (Kiro finds the relevant files automatically)
 - `#file .kiro/hooks/build-on-save.json` — Reference a specific hook file in your question
 
 ---
@@ -247,7 +249,7 @@ They're version-controllable — commit them to your repo and the whole team get
 
 ## 5.9 — Hook Patterns Worth Knowing
 
-Beyond what we built, here are patterns the audience might want to try:
+Beyond what you built, here are patterns you may want to try:
 
 | Pattern                | Event                      | Action                                                     | Use case             |
 | ---------------------- | -------------------------- | ---------------------------------------------------------- | -------------------- |
@@ -259,9 +261,9 @@ Beyond what we built, here are patterns the audience might want to try:
 
 ---
 
-## 5.10 — What We Just Demonstrated
+## 5.10 — Recap
 
-| Kiro Feature                  | How we used it                                              |
+| Kiro Feature                  | How you used it                                             |
 | ----------------------------- | ----------------------------------------------------------- |
 | **Agent Hooks**               | Created three hooks with different trigger types            |
 | **fileEdited trigger**        | Build on save for TypeScript files                          |
@@ -286,4 +288,4 @@ The best hooks are the ones you forget about. They just work in the background, 
 
 ## What's Next
 
-We've got conventions (Steering) and automation (Hooks). In the next step, we'll extend Kiro's capabilities with **Powers** — installing curated tool bundles that give Kiro access to external services and specialized knowledge.
+You've got conventions (Steering) and automation (Hooks). In the next step, you'll extend Kiro's capabilities with **Powers** — installing curated tool bundles that give Kiro access to external services and specialized knowledge.

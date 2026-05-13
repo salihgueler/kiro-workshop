@@ -1,12 +1,12 @@
 # Step 4 — Steering
 
-> **Goal:** Teach Kiro about our project's conventions using Steering files. Generate foundational docs, create custom steering for our API and component patterns, and show how inclusion modes control when context loads.
+> **Goal:** Teach Kiro about your project's conventions using Steering files. Generate foundational docs, create custom steering for your API and component patterns, and see how inclusion modes control when context loads.
 
 ---
 
 ## 4.1 — Why Steering?
 
-In Step 3 we installed Skills — general knowledge from the community (design principles, React patterns). Skills are great, but they don't know anything about _our_ project.
+In Step 3 you installed Skills — general knowledge from the community (design principles, React patterns). Skills are great, but they don't know anything about _your_ project.
 
 Steering fills that gap. It's how you teach Kiro:
 
@@ -40,7 +40,7 @@ Kiro can auto-generate three foundational files that capture the basics of your 
 ### How to generate them
 
 1. Open the **Steering** section in the Kiro panel (left sidebar)
-2. Click the **Generate Steering Docs** button (or click `+` → Foundation steering files)
+2. Click the **Generate Steering Docs** button (or click `+` → **Protect steering files**)
 3. Kiro analyzes your codebase and generates three files
 
 ### The three foundational files
@@ -57,7 +57,7 @@ Kiro will document: React + Vite + TypeScript for the frontend, Node.js + Expres
 
 Kiro will map out the file structure: where components live, where API routes are defined, where styles go, and the naming conventions already in use.
 
-### What to point out
+### What to notice
 
 - Kiro didn't just list files — it understood the _architecture_. It knows the frontend and backend are separate, it knows which components handle game logic vs display.
 - These files are **always included** by default — every future chat session will have this context automatically.
@@ -71,7 +71,7 @@ Foundational files cover the basics. Custom steering files let you encode specif
 
 ### Custom file 1: API conventions
 
-Create a new steering file for our backend API patterns.
+Create a new steering file for your backend API patterns.
 
 1. In the Steering section, click `+`
 2. Choose **Workspace** scope
@@ -129,7 +129,7 @@ On error:
 
 ### Custom file 2: Component patterns
 
-Create another for our React component conventions:
+Create another for your React component conventions:
 
 ```markdown
 ---
@@ -190,7 +190,7 @@ fileMatchPattern: "server/**/*.ts"
 ---
 ```
 
-Loaded only when you're working with files that match the pattern. Our API conventions file only loads when we're touching backend code — no point cluttering context when we're working on the frontend.
+Loaded only when you're working with files that match the pattern. Your API conventions file only loads when you're touching backend code — no point cluttering context when you're working on the frontend.
 
 ### Manual
 
@@ -226,7 +226,7 @@ Now let's prove steering works. Open a Vibe chat and ask Kiro to add a new API e
 
 ```
 Add a new endpoint to get a single game by ID.
-Follow our existing API conventions.
+Follow the existing API conventions.
 ```
 
 ### What to watch for
@@ -275,16 +275,16 @@ This means your steering setup can work across multiple AI tools — `AGENTS.md`
 
 ---
 
-## 4.9 — What We Just Demonstrated
+## 4.9 — Recap
 
-| Kiro Feature              | How we used it                                                    |
+| Kiro Feature              | How you used it                                                   |
 | ------------------------- | ----------------------------------------------------------------- |
 | **Foundational steering** | Auto-generated product.md, tech.md, and structure.md              |
 | **Custom steering files** | Created API conventions and component patterns                    |
 | **Inclusion modes**       | Used `always` (foundational) and `fileMatch` (conditional)        |
 | **File references**       | Linked to workspace files from steering docs                      |
 | **AGENTS.md**             | Mentioned cross-tool compatibility                                |
-| **Steering in action**    | Added an API endpoint that followed our conventions automatically |
+| **Steering in action**    | Added an API endpoint that followed your conventions automatically|
 
 ---
 
@@ -298,4 +298,4 @@ The foundational files take 30 seconds to generate. Custom steering files take a
 
 ## What's Next
 
-We've taught Kiro how our project works. In the next step, we'll automate things with **Hooks** — setting up triggers that fire automatically when we save files, run tools, or complete tasks.
+You've taught Kiro how your project works. In the next step, you'll automate things with **Hooks** — setting up triggers that fire automatically when you save files, run tools, or complete tasks.

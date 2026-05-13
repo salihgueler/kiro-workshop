@@ -1,12 +1,12 @@
 # Step 6 — Powers
 
-> **Goal:** Extend Kiro with Powers — curated tool bundles that give the agent access to external services. Install a power to deploy our tic-tac-toe game (or whatever the audience picks), and show how powers activate dynamically based on context.
+> **Goal:** Extend Kiro with Powers — curated tool bundles that give the agent access to external services. Install a power, use it to do something real with your tic-tac-toe game, and see how powers activate dynamically based on context.
 
 ---
 
 ## 6.1 — Why Powers?
 
-So far, everything we've done has been local — Kiro reads files, writes code, runs commands on our machine. But real projects need external services: deployment platforms, databases, observability tools, payment providers, design tools.
+So far, everything you've done has been local — Kiro reads files, writes code, runs commands on your machine. But real projects need external services: deployment platforms, databases, observability tools, payment providers.
 
 You _could_ set up raw MCP servers for each of these. But that creates two problems:
 
@@ -15,11 +15,11 @@ You _could_ set up raw MCP servers for each of these. But that creates two probl
 
 Powers solve both. A Power bundles:
 
-- **MCP server config** — The tools and connection details
-- **POWER.md** — Steering that teaches Kiro _how_ to use the tools well
-- **Hooks/steering** — Optional automation and workflow guidance
+- **MCP server config**: The tools and connection details
+- **POWER.md**: Steering that teaches Kiro _how_ to use the tools well
+- **Hooks/steering**: Optional automation and workflow guidance
 
-And they load **dynamically** — only when your conversation mentions relevant keywords. Talk about "deploy," the deployment power activates. Switch to "database," the DB power loads instead. No manual toggling.
+They load **dynamically** — only when your conversation mentions relevant keywords. Talk about "deploy," the deployment power activates. Switch to "database," the DB power loads instead. No manual toggling.
 
 ---
 
@@ -92,34 +92,32 @@ Powers install with one click — no JSON config files, no CLI setup.
 
 ---
 
-## 6.4 — The Workshop Moment: Audience Picks
+## 6.4 — Try It: Pick Something and Go
 
-This is where the audience drives. Ask them:
-
-> "We've got a working tic-tac-toe game with a backend. What should we do with it? Deploy it? Add a real database? Connect it to Figma? Add payments for premium features? Go wild."
+You've got a working tic-tac-toe game with a backend. Now pick a direction and let a Power handle the heavy lifting. Here are some paths — choose whichever sounds interesting to you.
 
 ### Option A: Deploy to Netlify
 
-Install the **Netlify** power and say:
+Install the **Netlify** power, then ask Kiro:
 
 ```
-Deploy our tic-tac-toe game to Netlify.
+Deploy the tic-tac-toe game to Netlify.
 Set up the build configuration and get me a live URL.
 ```
 
 Kiro will:
 
-- Activate the Netlify power (keyword: "deploy," "Netlify")
-- Use Netlify's MCP tools to create a site, configure the build, and deploy
-- Follow Netlify best practices from the POWER.md steering
-- Give you a live URL to share with the audience
+- Activate the Netlify power (triggered by keywords "deploy" and "Netlify")
+- Use Netlify's MCP tools to create a site and configure the build
+- Follow best practices from the power's built-in POWER.md steering
+- Deploy and give you a live URL
 
 ### Option B: Deploy to AWS with Amplify
 
-Install the **AWS Amplify** power and say:
+Install the **AWS Amplify** power, then ask:
 
 ```
-Deploy our tic-tac-toe game to AWS using Amplify.
+Deploy the tic-tac-toe game to AWS using Amplify.
 Set up hosting for the frontend and a serverless backend.
 ```
 
@@ -132,10 +130,10 @@ Kiro will:
 
 ### Option C: Add a real database with Supabase
 
-Install the **Supabase** power and say:
+Install the **Supabase** power, then ask:
 
 ```
-Replace our in-memory data store with Supabase.
+Replace the in-memory data store with Supabase.
 Set up a Postgres database for game results and the leaderboard.
 Use Supabase's auth for player accounts.
 ```
@@ -145,15 +143,15 @@ Kiro will:
 - Activate the Supabase power
 - Create tables for games and players
 - Set up Row Level Security policies
-- Integrate Supabase client into the React frontend
+- Integrate the Supabase client into the React frontend
 - Replace the Express in-memory store with Supabase queries
 
-### Option D: Deploy infrastructure with CDK
+### Option D: Deploy infrastructure to AWS with CDK
 
-Install the **AWS Infrastructure as Code** power and say:
+Install the **AWS Infrastructure as Code** power, then ask:
 
 ```
-Create a CDK stack to deploy our tic-tac-toe backend as a Lambda function
+Create a CDK stack to deploy the tic-tac-toe backend as a Lambda function
 behind API Gateway, with a DynamoDB table for game storage.
 ```
 
@@ -164,17 +162,17 @@ Kiro will:
 - Follow AWS Well-Architected best practices
 - Validate the CloudFormation template
 
-### Option E: Whatever the audience wants
+### Option E: Something else entirely
 
-The catalog has 50+ powers. If someone suggests something unexpected — security scanning with Snyk, observability with Datadog, image generation with Bria — install it and go.
+The catalog has 50+ powers. Security scanning with Snyk? Observability with Datadog? Image generation with Bria? Install whatever catches your eye and point Kiro at it.
 
 ---
 
 ## 6.5 — How Dynamic Activation Works
 
-Here's the key thing to show the audience. After installing a power:
+After installing a power, try this sequence to see the dynamic loading in action:
 
-1. **Start a conversation about something unrelated** — "Explain the game logic in Board.tsx." The power stays dormant. No extra tools loaded.
+1. **Start a conversation about something unrelated** — "Explain the game logic in App.tsx." The power stays dormant. No extra tools loaded.
 2. **Then mention the power's domain** — "Now deploy this to Netlify." The power activates. Kiro loads the MCP tools and POWER.md steering.
 3. **Switch topics again** — "Add a new game mode." The power deactivates. Context is freed up.
 
@@ -184,7 +182,7 @@ This is the difference between Powers and raw MCP servers. With raw MCP, all too
 
 ## 6.6 — What's Inside a Power
 
-If the audience is curious, show the anatomy of a power. Every power is a folder with:
+If you're curious, here's the anatomy. Every power is a folder with:
 
 ```
 my-power/
@@ -209,7 +207,7 @@ Together, they give Kiro both the _ability_ and the _knowledge_ to use external 
 
 ## 6.7 — Powers vs Skills vs Steering vs MCP
 
-Final comparison now that we've seen all four:
+Now that you've seen all four knowledge systems, here's how they compare:
 
 |                    | Powers                   | Skills                        | Steering               | Raw MCP             |
 | ------------------ | ------------------------ | ----------------------------- | ---------------------- | ------------------- |
@@ -224,16 +222,16 @@ The mental model: **Steering** is your project wiki. **Skills** are community pl
 
 ---
 
-## 6.8 — What We Just Demonstrated
+## 6.8 — Recap
 
-| Kiro Feature           | How we used it                                                  |
+| Kiro Feature           | How you used it                                                 |
 | ---------------------- | --------------------------------------------------------------- |
 | **Powers**             | Installed and used a curated power for deployment/database/etc. |
 | **One-click install**  | Installed a power from the Kiro panel                           |
-| **Dynamic activation** | Showed powers loading/unloading based on conversation context   |
+| **Dynamic activation** | Saw powers loading/unloading based on conversation context      |
 | **MCP integration**    | Powers configured MCP servers automatically                     |
 | **POWER.md steering**  | Kiro followed best practices bundled with the power             |
-| **Powers ecosystem**   | Browsed the catalog of 50+ available powers                     |
+| **Powers ecosystem**   | Browsed the catalog of available powers                         |
 
 ---
 
@@ -241,10 +239,12 @@ The mental model: **Steering** is your project wiki. **Skills** are community pl
 
 Powers are the bridge between Kiro and the outside world. They give Kiro access to deployment platforms, databases, observability tools, and more — with the expertise to use them well. And because they load dynamically, you can have dozens installed without slowing anything down.
 
-The one-click install means going from "I want to deploy this" to "it's deployed" takes minutes, not hours of configuration.
+Going from "I want to deploy this" to "it's deployed" takes minutes, not hours of configuration.
 
 ---
 
 ## What's Next
 
-We've covered all the major Kiro features: Vibe mode, Specs, Skills, Steering, Hooks, and Powers. Time to wrap up — let's review what we built, what we learned, and where to go from here.
+You've covered all the major Kiro features: Vibe mode, Specs, Skills, Steering, Hooks, and Powers. Time to wrap up — let's review what you built, what you learned, and where to go from here.
+
+→ [Step 7: MCP and Testing](./7_mcp_and_testing.md) — Set up custom MCP servers and explore property-based testing.
